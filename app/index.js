@@ -1,18 +1,44 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
 import React, { Component } from 'react';
-
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import {
-  View,
+  StyleSheet,
   Text,
+  View,
+  StatusBar,
 } from 'react-native';
+import todoReducer from './reducers';
+import AppHeader from './containers/AppHeader';
+import TodoList from './containers/TodoList';
 
-class App extends Component {
+// const reducer = combineReducers(todoReducer);
+const store = createStore(todoReducer);
+
+export default class App extends Component {
   render() {
     return (
-      <View>
-        <Text>Hello World!</Text>
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <StatusBar
+            backgroundColor="#232f38"
+          />
+          <AppHeader />
+          <TodoList />
+        </View>
+      </Provider>
     );
   }
 }
 
-export default App;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F5FCFF',
+  },
+});
