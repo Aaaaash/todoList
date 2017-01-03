@@ -21,7 +21,6 @@ class TodoList extends Component {
     text: '',
   }
   handleChangeValue = (val, id) => {
-    console.log(val);
     this.props.onChangeTodoItemState({ id, complate: val });
   }
   handleAddTodo = () => {
