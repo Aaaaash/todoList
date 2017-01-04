@@ -8,6 +8,7 @@ import {
   Switch,
   Alert,
 } from 'react-native';
+// import RadioButton from 'mrn';
 import { connect } from 'react-redux';
 
 import {
@@ -26,6 +27,7 @@ class TodoList extends Component {
   handleAddTodo = () => {
     this.props.onAddTodoItem(this.state.text);
     this.setState({ text: '' });
+    this.refs.text.blur();
   }
   renderTodoList = (list) =>
     list.map((item, index) =>
@@ -51,6 +53,7 @@ class TodoList extends Component {
           placeholder="输入代办事项"
           value={this.state.text}
           onChangeText={(val) => this.setState({ text: val })}
+          ref="text"
         />
         <Button
           title="添加"
@@ -93,8 +96,8 @@ const mapStateToProps = (state) => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onAddTodoItem: (val) => dispatch(addTodoItem(val)),
     onDeleteTodoItem: (val) => dispatch(minusTodoItem(val)),
+    onAddTodoItem: (val) => dispatch(addTodoItem(val)),
     onChangeTodoItemState: (val) => dispatch(finishTodoItem(val)),
   };
 }

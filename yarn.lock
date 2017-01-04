@@ -2573,6 +2573,12 @@ morgan@~1.6.1:
     on-finished "~2.3.0"
     on-headers "~1.0.0"
 
+mrn:
+  version "0.1.7"
+  resolved "http://registry.npm.taobao.org/mrn/download/mrn-0.1.7.tgz#91b62b08f1abd1bbb04a44bc2e673b246d8c7151"
+  dependencies:
+    react-native-material-design-styles "^0.2.5"
+
 ms@0.7.1:
   version "0.7.1"
   resolved "http://registry.npm.taobao.org/ms/download/ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098"
@@ -3003,6 +3009,10 @@ react-native:
     xcode "^0.8.9"
     xmldoc "^0.4.0"
     yargs "^6.4.0"
+
+react-native-material-design-styles@^0.2.5:
+  version "0.2.6"
+  resolved "http://registry.npm.taobao.org/react-native-material-design-styles/download/react-native-material-design-styles-0.2.6.tgz#2039f638fd11f1e340db7b39ea81ad07f6d81ff0"
 
 react-proxy@^1.1.7:
   version "1.1.8"

@@ -5,7 +5,18 @@ import {
 } from '../constants';
 
 const initialState = {
-  todoList: [],
+  todoList: [
+    {
+      id: 1,
+      text: 'sakura',
+      complate: false,
+    },
+    {
+      id: 2,
+      text: 'kekeke',
+      complate: true,
+    },
+  ],
   maxid: 0,
 };
 
@@ -13,13 +24,12 @@ function todoReducer(state = initialState, action) {
   switch(action.type) {
     case ADD_TODO_ITEM:
     {
-      const newTodo = {
+      state.maxid ++;
+      state.todoList.push({
         id: state.maxid + 1,
         text: action.val,
         complate: false,
-      };
-      state.maxid = newTodo.id;
-      state.todoList.push(newTodo);
+      });
       return state;
     }
     case MINUS_TODO_ITEM:
